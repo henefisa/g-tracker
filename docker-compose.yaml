@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: postgres
+    container_name: pg_container
+    environment:
+      POSTGRES_USER: 'henefisa'
+      POSTGRES_PASSWORD: 'password'
+      POSTGRES_DB: 'gh-tracker'
+      PGDATA: /data/postgres
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    ports:
+      - '5433:5432'
+    networks:
+      - local
+    restart: unless-stopped
+
+networks:
+  local:
+    driver: bridge
+
+volumes:
+  postgres:
