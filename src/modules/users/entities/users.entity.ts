@@ -1,4 +1,4 @@
-import { Base } from 'src/common/base.entity';
+import { Base } from 'src/modules/common/base.entity';
 import { Column, Entity } from 'typeorm';
 import { EUserType } from 'src/shared/types/users';
 
